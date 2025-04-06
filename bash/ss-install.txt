@@ -157,7 +157,7 @@ if [[ -f "/var/www/ss-config" ]]; then
     fi
 
     ## verify site root domain is valid ##
-    if [[ ! "${SITE_ROOT_DOMAIN}" =~ ^[a-zA-Z0-9-]{2,}\.[a-zA-Z]{2,}$ ]]; then
+    if [[ ! "${SITE_ROOT_DOMAIN}" =~ ^[a-zA-Z0-9-]{2,}(\.[a-zA-Z0-9-]+)+$ ]]; then
         ss_echo "${COLOR_ERROR}ERROR: Please fix SITE_ROOT_DOMAIN in your ss-config... the part before and after the period must be at least 2 characters long... ${COLOR_RESET}"
         exit 1
     fi
